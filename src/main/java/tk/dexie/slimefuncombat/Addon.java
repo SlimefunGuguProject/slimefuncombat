@@ -107,11 +107,11 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         containerPiece.register(this);
         
         SlimefunItem diamondPlate = new SlimefunItem(acmCategory, diamondPlateIS,
-        		RecipeType.PRESSURE_CHAMBER, diamondPlateRecipe);
+        		RecipeType.ENHANCED_CRAFTING_TABLE, diamondPlateRecipe);
         diamondPlate.register(this);
         
         DiamondPlateBlock diamondPlateBlock = new DiamondPlateBlock(acCategory, diamondPlateBlockIS,
-        		RecipeType.PRESSURE_CHAMBER, diamondPlateBlockRecipe);
+        		RecipeType.ARMOR_FORGE, diamondPlateBlockRecipe);
         diamondPlateBlock.register(this);
     }
 

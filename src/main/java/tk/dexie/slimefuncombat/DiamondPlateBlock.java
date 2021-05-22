@@ -33,8 +33,7 @@ public class DiamondPlateBlock extends SlimefunItem implements Radioactive,Withe
     }
 	
     private void onItemRightClick(PlayerRightClickEvent event) {
-        // Prevents placing
-    	event.cancel();
+        // 
     }
 
 	@Override
