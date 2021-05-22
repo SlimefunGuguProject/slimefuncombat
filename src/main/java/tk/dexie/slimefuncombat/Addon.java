@@ -51,7 +51,8 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         );
         
         
-        SlimefunItemStack atomBombItem = new SlimefunItemStack("NUCLEAR_BOMB", Material.IRON_BLOCK, "&c&lNuclear Bomb", "&cHahaha noob go boom");
+        SlimefunItemStack atomBombIS = new SlimefunItemStack("NUCLEAR_BOMB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzEzYjc4YjUyMDc4MWI1OTcwYzRlMTE3Mjc0ZTkzNjNlNjY3MjFlZmQ3YmJlMTk1OWUyNjZiOThlMzc3NTljZSJ9fX0=",
+        		"&c&lNuclear Bomb", "&cDon't drop it!");
         ItemStack[] atomBombRecipe = {
     new ItemStack(Material.EMERALD),	null,								new ItemStack(Material.EMERALD),
     null,								SlimefunItems.CARBONADO,			null,
@@ -64,7 +65,7 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
          * which this item is crafted in.
          * Recipe Types from Slimefun itself will automatically add the recipe to that machine.
          */
-        AtomBomb atomBomb = new AtomBomb(acCategory, atomBombItem,
+        AtomBomb atomBomb = new AtomBomb(acCategory, atomBombIS,
         		RecipeType.ENHANCED_CRAFTING_TABLE, atomBombRecipe);
         atomBomb.register(this);
     }
