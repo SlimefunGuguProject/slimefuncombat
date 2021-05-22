@@ -75,9 +75,9 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         };
         
         ItemStack[] diamondPlateRecipe = {
-    new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND),
+    new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND),
     SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.REINFORCED_ALLOY_INGOT,
-    new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND)
+    new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND)
         };
 
         /*
@@ -90,6 +90,14 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         AtomBomb atomBomb = new AtomBomb(acCategory, atomBombIS,
         		RecipeType.ENHANCED_CRAFTING_TABLE, atomBombRecipe);
         atomBomb.register(this);
+        
+        SlimefunItem containerPiece = new SlimefunItem(acmCategory, containerPieceIS,
+        		RecipeType.ENHANCED_CRAFTING_TABLE, containerPieceRecipe);
+        containerPiece.register(this);
+        
+        SlimefunItem diamondPlate = new SlimefunItem(acmCategory, diamondPlateIS,
+        		RecipeType.PRESSURE_CHAMBER, diamondPlateRecipe);
+        diamondPlate.register(this);
     }
 
     @Override
