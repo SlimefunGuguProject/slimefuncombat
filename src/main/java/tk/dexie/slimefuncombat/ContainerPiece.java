@@ -15,8 +15,8 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 
-public class AtomBomb extends SlimefunItem {
-	public AtomBomb(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+public class ContainerPiece extends SlimefunItem {
+	public ContainerPiece(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
 		super(category, item, recipeType, recipe);
 		// TODO Auto-generated constructor stub
 	}
@@ -29,8 +29,6 @@ public class AtomBomb extends SlimefunItem {
 	
     private void onItemRightClick(PlayerRightClickEvent event) {
         // Prevents placing
-    	//event.cancel();
-    	
-        event.getPlayer().giveExpLevels(1);
+    	event.cancel();
     }
 }
