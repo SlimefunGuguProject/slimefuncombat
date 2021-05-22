@@ -86,9 +86,9 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         };
         
         ItemStack[] diamondPlateBlockRecipe = {
-    diamondPlateIS,		diamondPlateIS,							diamondPlateIS,
-    diamondPlateIS,		SlimefunItems.REINFORCED_ALLOY_INGOT,	diamondPlateIS,
-    diamondPlateIS,		diamondPlateIS,							diamondPlateIS
+    diamondPlateIS,				diamondPlateIS,							diamondPlateIS,
+    SlimefunItems.NEPTUNIUM,	SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.NEPTUNIUM,
+    diamondPlateIS,				diamondPlateIS,							diamondPlateIS
         };
 
         /*
@@ -109,6 +109,10 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         SlimefunItem diamondPlate = new SlimefunItem(acmCategory, diamondPlateIS,
         		RecipeType.PRESSURE_CHAMBER, diamondPlateRecipe);
         diamondPlate.register(this);
+        
+        DiamondPlateBlock diamondPlateBlock = new DiamondPlateBlock(acCategory, diamondPlateBlockIS,
+        		RecipeType.PRESSURE_CHAMBER, diamondPlateBlockRecipe);
+        diamondPlateBlock.register(this);
     }
 
     @Override
