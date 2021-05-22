@@ -25,6 +25,7 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 
 public class Addon extends JavaPlugin implements SlimefunAddon {
 
@@ -40,7 +41,8 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         
         Category acCategory = new Category(
         		new NamespacedKey(this, "ac_category"),
-        		new CustomItem(Material.DIAMOND_SWORD, "&cAdvanced Combat", "", "&a> Click to open")
+        		new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzEzYjc4YjUyMDc4MWI1OTcwYzRlMTE3Mjc0ZTkzNjNlNjY3MjFlZmQ3YmJlMTk1OWUyNjZiOThlMzc3NTljZSJ9fX0="),
+        				"&cAdvanced Combat", "", "&a> Click to open")
         );
         
         Category acmCategory = new Category(
