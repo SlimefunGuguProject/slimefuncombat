@@ -6,6 +6,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -19,4 +21,15 @@ public class AtomBomb extends SlimefunItem {
 		// TODO Auto-generated constructor stub
 	}
 	
+    @Override
+    public void preRegister() {
+        ItemUseHandler itemUseHandler = this::onItemRightClick;
+        addItemHandler(itemUseHandler);
+    }
+	
+    private void onItemRightClick(PlayerRightClickEvent event) {
+        // Calling event.cancel() in here would prevent the cake
+        // from being placed down.
+        event.getPlayer().giveExpLevels(1);
+    }
 }

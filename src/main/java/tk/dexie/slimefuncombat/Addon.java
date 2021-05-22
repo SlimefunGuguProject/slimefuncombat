@@ -50,13 +50,35 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         		new CustomItem(Material.COAL, "&cAC Resources", "", "&a> Click to open")
         );
         
+        SlimefunItemStack diamondPlateIS = new SlimefunItemStack("DIAMOND_PLATE", Material.PAPER,
+        		"&aDiamond Plate", "&cWhat a cool pattern!");
+        
+        SlimefunItemStack containerPieceIS = new SlimefunItemStack("CONTAINER_PIECE", Material.IRON_BLOCK,
+        		"&cContainer Piece", "&cThe edges seem really sharp.");
         
         SlimefunItemStack atomBombIS = new SlimefunItemStack("NUCLEAR_BOMB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzEzYjc4YjUyMDc4MWI1OTcwYzRlMTE3Mjc0ZTkzNjNlNjY3MjFlZmQ3YmJlMTk1OWUyNjZiOThlMzc3NTljZSJ9fX0=",
         		"&c&lNuclear Bomb", "&cDon't drop it!");
+        
+        
+        // Recipes
+        
         ItemStack[] atomBombRecipe = {
-    new ItemStack(Material.EMERALD),	null,								new ItemStack(Material.EMERALD),
-    null,								SlimefunItems.CARBONADO,			null,
-    new ItemStack(Material.EMERALD),	null,								new ItemStack(Material.EMERALD) };
+    containerPieceIS,			SlimefunItems.CARBONADO,	containerPieceIS,
+    SlimefunItems.CARBONADO,	SlimefunItems.URANIUM,		SlimefunItems.CARBONADO,
+    containerPieceIS,			SlimefunItems.CARBONADO,	containerPieceIS
+        };
+        
+        ItemStack[] containerPieceRecipe = {
+    diamondPlateIS,		diamondPlateIS,			diamondPlateIS,
+    diamondPlateIS,		SlimefunItems.URANIUM,	diamondPlateIS,
+    diamondPlateIS,		diamondPlateIS,			diamondPlateIS
+        };
+        
+        ItemStack[] diamondPlateRecipe = {
+    new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND),
+    SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.REINFORCED_ALLOY_INGOT,
+    new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND),	new ItemStack(Material.DIAMOND)
+        };
 
         /*
          * 4. Registering the Item
