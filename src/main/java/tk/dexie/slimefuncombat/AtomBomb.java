@@ -31,6 +31,6 @@ public class AtomBomb extends SlimefunItem {
         // Prevents placing
     	//event.cancel();
     	
-        event.getPlayer().giveExpLevels(1);
+        event.cancel();
     }
 }
