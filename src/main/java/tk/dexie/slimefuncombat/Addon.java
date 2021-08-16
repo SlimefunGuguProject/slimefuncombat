@@ -42,35 +42,35 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         Category acCategory = new Category(
         		new NamespacedKey(this, "ac_category"),
         		new CustomItem(SkullItem.fromBase64("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzEzYjc4YjUyMDc4MWI1OTcwYzRlMTE3Mjc0ZTkzNjNlNjY3MjFlZmQ3YmJlMTk1OWUyNjZiOThlMzc3NTljZSJ9fX0="),
-        				"&cAdvanced Combat", "", "&a> Click to open")
+        				"&c原子弹模型 &7- &5主页", "", "&a> 单击打开")
         );
         
         Category acmCategory = new Category(
         		new NamespacedKey(this, "acm_category"),
-        		new CustomItem(Material.COAL, "&cAC Resources", "", "&a> Click to open")
+        		new CustomItem(Material.CHARCOAL, "&c原子弹模型 &7- &a材料", "", "&a> 单击打开")
         );
         
         // Items
         
-        SlimefunItemStack diamondPlateIS = new SlimefunItemStack("DIAMOND_PLATE", Material.PAPER,
-        		"&aDiamond Plate", "&cWhat a cool pattern!");
+        SlimefunItemStack diamondPlateIS = new SlimefunItemStack("CB_DIAMOND_PLATE", Material.PAPER,
+        		"&a强化钻石板");
         
-        SlimefunItemStack containerPieceIS = new SlimefunItemStack("CONTAINER_PIECE", Material.IRON_BLOCK,
-        		"&cContainer Piece", "&cThe edges seem really sharp.");
+        SlimefunItemStack containerPieceIS = new SlimefunItemStack("CB_CONTAINER_PIECE", Material.IRON_BLOCK,
+        		"&c原子弹外壳", "&7它是用来包裹原子弹核心的");
         
-        SlimefunItemStack diamondPlateBlockIS = new SlimefunItemStack("DIAMOND_PLATE_BLOCK", Material.IRON_BLOCK,
-        		"&cDiamond Plated Metal", "&cThe edges seem really sharp.");
+        SlimefunItemStack diamondPlateBlockIS = new SlimefunItemStack("CB_DIAMOND_PLATE_BLOCK", Material.IRON_BLOCK,
+        		"&b反射层", "&4请注意反射层的辐射！", "&7千万不要长时间拿在手上！");
         
-        SlimefunItemStack atomBombIS = new SlimefunItemStack("NUCLEAR_BOMB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzEzYjc4YjUyMDc4MWI1OTcwYzRlMTE3Mjc0ZTkzNjNlNjY3MjFlZmQ3YmJlMTk1OWUyNjZiOThlMzc3NTljZSJ9fX0=",
-        		"&c&lNuclear Bomb", "&cDon't drop it!");
+        SlimefunItemStack atomBombIS = new SlimefunItemStack("CB_NUCLEAR_BOMB", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzEzYjc4YjUyMDc4MWI1OTcwYzRlMTE3Mjc0ZTkzNjNlNjY3MjFlZmQ3YmJlMTk1OWUyNjZiOThlMzc3NTljZSJ9fX0=",
+        		"&c&l原子弹模型", "&7快用这个去吓唬你的好基友!");
         
         
         // Recipes
         
         ItemStack[] atomBombRecipe = {
-    containerPieceIS,			SlimefunItems.CARBONADO,	containerPieceIS,
+    containerPieceIS,			diamondPlateBlockIS,	containerPieceIS,
     SlimefunItems.CARBONADO,	SlimefunItems.URANIUM,		SlimefunItems.CARBONADO,
-    containerPieceIS,			SlimefunItems.CARBONADO,	containerPieceIS
+    containerPieceIS,			diamondPlateBlockIS,	containerPieceIS
         };
         
         ItemStack[] containerPieceRecipe = {
@@ -81,7 +81,7 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         
         ItemStack[] diamondPlateRecipe = {
     new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND),
-    SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.REINFORCED_ALLOY_INGOT,
+    SlimefunItems.URANIUM,	SlimefunItems.REINFORCED_ALLOY_INGOT,	SlimefunItems.URANIUM,
     new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND),		new ItemStack(Material.DIAMOND)
         };
         
@@ -110,7 +110,7 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
         		RecipeType.ENHANCED_CRAFTING_TABLE, diamondPlateRecipe);
         diamondPlate.register(this);
         
-        DiamondPlateBlock diamondPlateBlock = new DiamondPlateBlock(acCategory, diamondPlateBlockIS,
+        DiamondPlateBlock diamondPlateBlock = new DiamondPlateBlock(acmCategory, diamondPlateBlockIS,
         		RecipeType.ARMOR_FORGE, diamondPlateBlockRecipe);
         diamondPlateBlock.register(this);
     }
@@ -136,3 +136,4 @@ public class Addon extends JavaPlugin implements SlimefunAddon {
     }
 
 }
+
